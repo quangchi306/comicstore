@@ -1,10 +1,25 @@
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import About from "./About.jsx";
+
+function Home() {
+  return (
+    <div className="home">
+      <h1>ComicStore</h1>
+      <p>Chào mừng đến với cửa hàng truyện tranh của chúng tôi!</p>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="home">
-      <h1>Comic Store</h1>
-      <p>Cửa hàng bán truyện tranh top 1 PTIT</p>
+    <div>
+      <nav>
+        <Link to="/">Trang chủ</Link> | <Link to="/about-us">Giới thiệu</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<About />} />
+      </Routes>
     </div>
   );
 }
